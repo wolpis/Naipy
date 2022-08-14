@@ -4,12 +4,12 @@ import random
 import sys
 
 @dataclass(frozen = True)
-class BaseNipy:
+class BaseNaipy:
   data : Dict[str, Any] = field(repr=False)
   """데이터 Dict"""
 
 @dataclass(frozen = True)
-class SearchNipy(BaseNipy):
+class SearchNaipy(BaseNaipy):
   type : Optional[str] = field(repr=True, compare=True, default=None)
   """검색 타입"""
   lastBuildDate : Optional[str] = field(repr=True, compare=True, default=None)
@@ -24,7 +24,7 @@ class SearchNipy(BaseNipy):
   """데이터 List"""
 
 @dataclass(frozen = True)
-class ImageNipy(SearchNipy):
+class ImageNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 이미지의 제목"""
@@ -51,7 +51,7 @@ class ImageNipy(SearchNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
 
 @dataclass(frozen = True)
-class BlogNipy(BaseNipy):
+class BlogNaipy(BaseNaipy):
   @property
   def title(self) -> str:
     """검색 결과 문서의 제목"""
@@ -83,7 +83,7 @@ class BlogNipy(BaseNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
   
 @dataclass(frozen = True)
-class BookNipy(SearchNipy):
+class BookNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 문서의 제목"""
@@ -130,7 +130,7 @@ class BookNipy(SearchNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
 
 @dataclass(frozen = True)
-class EncycNipy(SearchNipy):
+class EncycNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 사전 정의의 제목"""
@@ -152,7 +152,7 @@ class EncycNipy(SearchNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
 
 @dataclass(frozen = True)
-class CafearticleNipy(SearchNipy):
+class CafearticleNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 문서의 제목"""
@@ -179,7 +179,7 @@ class CafearticleNipy(SearchNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
 
 @dataclass(frozen = True)
-class KinNipy(SearchNipy):
+class KinNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 문서의 제목"""
@@ -196,7 +196,7 @@ class KinNipy(SearchNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
 
 @dataclass(frozen = True)
-class WebkrNipy(SearchNipy):
+class WebkrNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 문서의 제목"""
@@ -213,7 +213,7 @@ class WebkrNipy(SearchNipy):
     return self.items[random.randrange(0, len(self.items))][f'{sys._getframe().f_code.co_name}']
 
 @dataclass(frozen = True)
-class ShopNipy(SearchNipy):
+class ShopNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """검색 결과 문서의 제목"""
@@ -275,7 +275,7 @@ class ShopNipy(SearchNipy):
     return result
 
 @dataclass(frozen = True)
-class DocNipy(SearchNipy):
+class DocNaipy(SearchNaipy):
   @property
   def title(self) -> str:
     """문서의 제목"""
