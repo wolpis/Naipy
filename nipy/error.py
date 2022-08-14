@@ -1,0 +1,2 @@
+class ConverError(Exception):
+  pass
