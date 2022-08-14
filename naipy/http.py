@@ -2,9 +2,9 @@ import urllib.request
 import warnings
 from typing import List
 import json
-from nipy.error import ConverError
+from naipy.error import ConverError
 
-class NipyRequest:
+class NaipyRequest:
   base_url = "https://openapi.naver.com/v1/"
   
   def __init__(
