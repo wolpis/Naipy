@@ -1,8 +1,8 @@
 <div align="center">
-  <h1>Nipy(니파이)</h1>
+  <h1>Naipy(네이피)</h1>
 </div>
 
-![image](https://user-images.githubusercontent.com/103942316/184535395-075a1a43-6f91-4ec0-a2d1-35c758e92a11.png)
+![image](https://user-images.githubusercontent.com/103942316/184539416-9568fad2-24ed-4832-8f01-e2775a89fafe.png)
 
 <div align="center">
   <h2>누구나 쉽게 네이버 API를</h2>
@@ -13,12 +13,12 @@
 
 ## Installation
 ```
-$ pip install nipy
+$ pip install naipy
 ```
 ## Example
 ### 검색(이미지)
 ```py
-from nipy import client
+from naipy import client
 
 nipy = client.Search()
 # 필수 인자(API)가 들어가는 곳입니다. (샘플키지원)
