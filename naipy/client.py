@@ -1,8 +1,8 @@
-from naipy.http import NipyRequest
+from naipy.http import NaipyRequest
 import sys
-from naipy.model import ImageNipy, BlogNipy, BookNipy, EncycNipy, CafearticleNipy, KinNipy, WebkrNipy, ShopNipy, DocNipy
+from naipy.model import ImageNaipy, BlogNaipy, BookNaipy, EncycNaipy, CafearticleNaipy, KinNaipy, WebkrNaipy, ShopNaipy, DocNaipy
 
-class Search(NipyRequest):
+class Search(NaipyRequest):
   """
   네이버 검색 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
   #### client_id
@@ -21,65 +21,65 @@ class Search(NipyRequest):
       client_secret = client_secret
     )
 
-  def image(self, text : str) -> ImageNipy:
+  def image(self, text : str) -> ImageNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return ImageNipy(data = data, **data)
+    return ImageNaipy(data = data, **data)
 
-  def blog(self, text : str) -> BlogNipy:
+  def blog(self, text : str) -> BlogNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return BlogNipy(data = data, **data)
+    return BlogNaipy(data = data, **data)
 
-  def book(self, text : str) -> BookNipy:
+  def book(self, text : str) -> BookNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return BookNipy(data = data, **data)
+    return BookNaipy(data = data, **data)
 
-  def encyc(self, text : str) -> EncycNipy:
+  def encyc(self, text : str) -> EncycNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return EncycNipy(data = data, **data)
+    return EncycNaipy(data = data, **data)
 
-  def cafearticle(self, text : str) -> CafearticleNipy:
+  def cafearticle(self, text : str) -> CafearticleNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return CafearticleNipy(data = data, **data)
+    return CafearticleNaipy(data = data, **data)
 
-  def kin(self, text : str) -> KinNipy:
+  def kin(self, text : str) -> KinNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return KinNipy(data = data, **data)
+    return KinNaipy(data = data, **data)
 
-  def webkr(self, text : str) -> WebkrNipy:
+  def webkr(self, text : str) -> WebkrNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return WebkrNipy(data = data, **data)
+    return WebkrNaipy(data = data, **data)
 
-  def shop(self, text : str) -> ShopNipy:
+  def shop(self, text : str) -> ShopNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return ShopNipy(data = data, **data)
+    return ShopNaipy(data = data, **data)
 
-  def doc(self, text : str) -> DocNipy:
+  def doc(self, text : str) -> DocNaipy:
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
-    return DocNipy(data = data, **data)
+    return DocNaipy(data = data, **data)
