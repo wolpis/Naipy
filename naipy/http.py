@@ -5,7 +5,7 @@ import json
 from naipy.error import ConverError
 
 class NaipyRequest:
-  base_url = "https://openapi.naver.com/v1/" 
+  base_url = "https://openapi.naver.com/v1/"
   
   def __init__(
     self, 
