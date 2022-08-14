@@ -1,6 +1,6 @@
-from nipy.http import NipyRequest
+from naipy.http import NipyRequest
 import sys
-from nipy.model import ImageNipy, BlogNipy, BookNipy, EncycNipy, CafearticleNipy, KinNipy, WebkrNipy, ShopNipy, DocNipy
+from naipy.model import ImageNipy, BlogNipy, BookNipy, EncycNipy, CafearticleNipy, KinNipy, WebkrNipy, ShopNipy, DocNipy
 
 class Search(NipyRequest):
   """
