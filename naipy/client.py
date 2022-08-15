@@ -22,6 +22,9 @@ class Search(NaipyRequest):
     )
 
   def image(self, text : str) -> ImageNaipy:
+    """
+    이미지를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -29,6 +32,9 @@ class Search(NaipyRequest):
     return ImageNaipy(data = data, **data)
 
   def blog(self, text : str) -> BlogNaipy:
+    """
+    블로그를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -36,6 +42,9 @@ class Search(NaipyRequest):
     return BlogNaipy(data = data, **data)
 
   def book(self, text : str) -> BookNaipy:
+    """
+    도서를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -43,6 +52,9 @@ class Search(NaipyRequest):
     return BookNaipy(data = data, **data)
 
   def encyc(self, text : str) -> EncycNaipy:
+    """
+    백과사전를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -50,6 +62,9 @@ class Search(NaipyRequest):
     return EncycNaipy(data = data, **data)
 
   def cafearticle(self, text : str) -> CafearticleNaipy:
+    """
+    카페글를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -57,6 +72,9 @@ class Search(NaipyRequest):
     return CafearticleNaipy(data = data, **data)
 
   def kin(self, text : str) -> KinNaipy:
+    """
+    네이버 지식인을 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -64,6 +82,9 @@ class Search(NaipyRequest):
     return KinNaipy(data = data, **data)
 
   def webkr(self, text : str) -> WebkrNaipy:
+    """
+    웹사이트를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -71,6 +92,9 @@ class Search(NaipyRequest):
     return WebkrNaipy(data = data, **data)
 
   def shop(self, text : str) -> ShopNaipy:
+    """
+    쇼핑을 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -78,6 +102,9 @@ class Search(NaipyRequest):
     return ShopNaipy(data = data, **data)
 
   def doc(self, text : str) -> DocNaipy:
+    """
+    전문자료를 검색합니다.
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
@@ -103,6 +130,9 @@ class Translation(NaipyRequest):
     )
 
   def detect(self, text : str) -> DetectNaipy:
+    """
+    언어를 인식합니다. [언어코드표](https://developers.naver.com/docs/papago/papago-nmt-api-reference.md#%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0)
+    """
     current_func_name = sys._getframe().f_code.co_name
     tag = ['papago', str(current_func_name) + 'Langs', 'query=']
     data = self.get_result(tag, text)
@@ -110,6 +140,9 @@ class Translation(NaipyRequest):
     return DetectNaipy(data = data, **data)
 
   def translation(self, text : str, target : str) -> N2mtNaipy:
+    """
+    문장또는 단어를 번역합니다. `target`파라미터는 [언어코드표](https://developers.naver.com/docs/papago/papago-nmt-api-reference.md#%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0)를 참고해주세요!
+    """
     source = self.detect(text).langCode
     tag = ['papago', 'n2mt', f'source={source}&target={target}&text=']
     data = self.get_result(tag, text)
