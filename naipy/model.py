@@ -9,6 +9,41 @@ class BaseNaipy:
   """데이터 Dict"""
 
 @dataclass(frozen = True)
+class DetectNaipy(BaseNaipy):
+  langCode : Optional[str] = field(repr=True, compare=True, default=None)
+  """언어코드"""
+  type : Optional[str] = field(repr=True, compare=True, default=None)
+  """return Detect"""
+  
+
+@dataclass(frozen = True)
+class N2mtNaipy(BaseNaipy):
+  srcLangType : Optional[str] = field(repr=True, compare=True, default=None)
+  """시작언어"""
+  tarLangType : Optional[str] = field(repr=True, compare=True, default=None)
+  """도착언어"""
+  translatedText : Optional[str] = field(repr=True, compare=True, default=None)
+  """번역된 글자"""
+  engineType : Optional[str] = field(repr=True, compare=True, default=None)
+  """엔진 유형"""
+  pivot : Optional[str] = field(repr=True, compare=True, default=None)
+  """"""
+  dict : Optional[str] = field(repr=True, compare=True, default=None)
+  """"""
+  tarDict : Optional[str] = field(repr=True, compare=True, default=None)
+  """"""
+  @property
+  def json(self):
+    """return JSON"""
+    result = {
+      "srcLangType" : self.srcLangType,
+      "tarLangType" : self.tarLangType,
+      'text' : self.text
+    }
+    return result
+
+  
+@dataclass(frozen = True)
 class SearchNaipy(BaseNaipy):
   type : Optional[str] = field(repr=True, compare=True, default=None)
   """검색 타입"""
