@@ -1,6 +1,6 @@
 from naipy.http import NaipyRequest
 import sys
-from naipy.model import ImageNaipy, BlogNaipy, BookNaipy, EncycNaipy, CafearticleNaipy, KinNaipy, WebkrNaipy, ShopNaipy, DocNaipy
+from naipy.model import ImageNaipy, BlogNaipy, BookNaipy, EncycNaipy, CafearticleNaipy, KinNaipy, WebkrNaipy, ShopNaipy, DocNaipy, DetectNaipy, N2mtNaipy
 
 class Search(NaipyRequest):
   """
@@ -83,3 +83,35 @@ class Search(NaipyRequest):
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
     return DocNaipy(data = data, **data)
+
+class Translation(NaipyRequest):
+  """
+  네이버 검색 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
+  #### client_id
+  [네이버개발자센터](https://developers.naver.com/main/)에서 발급받은 `Client ID`를 입력합니다.
+  #### client_secret
+  [네이버개발자센터](https://developers.naver.com/main/)에서 발급받은 `Client Secret`를 입력합니다.
+  """
+  def __init__(
+    self, 
+    client_id : str = None, 
+    client_secret : str = None
+  ) -> None:
+    super().__init__(
+      client_id = client_id,
+      client_secret = client_secret
+    )
+
+  def detect(self, text : str) -> DetectNaipy:
+    current_func_name = sys._getframe().f_code.co_name
+    tag = ['papago', str(current_func_name) + 'Langs', 'query=']
+    data = self.get_result(tag, text)
+    data["type"] = str(current_func_name)
+    return DetectNaipy(data = data, **data)
+
+  def translation(self, text : str, target : str) -> N2mtNaipy:
+    source = self.detect(text).langCode
+    tag = ['papago', 'n2mt', f'source={source}&target={target}&text=']
+    data = self.get_result(tag, text)
+    data = data['message']['result']
+    return N2mtNaipy(data , **data)
