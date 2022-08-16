@@ -143,7 +143,8 @@ class Translation(AsyncNaipyRequest):
     """
     문장또는 단어를 번역합니다. `target`파라미터는 [언어코드표](https://developers.naver.com/docs/papago/papago-nmt-api-reference.md#%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0)를 참고해주세요!
     """
-    source = await self.detect(text).langCode
+    source = await self.detect(text)
+    source = source.langCode
     tag = ['papago', 'n2mt', f'source={source}&target={target}&text=']
     data = await self.get_result(tag, text)
     data = data['message']['result']
