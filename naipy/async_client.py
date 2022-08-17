@@ -1,10 +1,11 @@
 from naipy.http import AsyncNaipyRequest
 from naipy.model import ImageNaipy, BlogNaipy, BookNaipy, EncycNaipy, CafearticleNaipy, KinNaipy, WebkrNaipy, ShopNaipy, DocNaipy, DetectNaipy, N2mtNaipy
 import sys
+import random
 
 class Search(AsyncNaipyRequest):
   """
-  네이버 검색 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
+  네이버 비동기 검색 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
   #### client_id
   [네이버개발자센터](https://developers.naver.com/main/)에서 발급받은 `Client ID`를 입력합니다.
   #### client_secret
@@ -29,6 +30,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return ImageNaipy(data = data, **data)
 
   async def blog(self, text : str) -> BlogNaipy:
@@ -39,6 +41,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return BlogNaipy(data = data, **data)
 
   async def book(self, text : str) -> BookNaipy:
@@ -49,6 +52,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return BookNaipy(data = data, **data)
 
   async def encyc(self, text : str) -> EncycNaipy:
@@ -59,6 +63,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return EncycNaipy(data = data, **data)
 
   async def cafearticle(self, text : str) -> CafearticleNaipy:
@@ -69,6 +74,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return CafearticleNaipy(data = data, **data)
 
   async def kin(self, text : str) -> KinNaipy:
@@ -79,6 +85,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return KinNaipy(data = data, **data)
 
   async def webkr(self, text : str) -> WebkrNaipy:
@@ -89,6 +96,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return WebkrNaipy(data = data, **data)
 
   async def shop(self, text : str) -> ShopNaipy:
@@ -99,6 +107,7 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return ShopNaipy(data = data, **data)
 
   async def doc(self, text : str) -> DocNaipy:
@@ -109,11 +118,12 @@ class Search(AsyncNaipyRequest):
     tag = ['search', str(current_func_name)]
     data = await self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return DocNaipy(data = data, **data)
 
 class Translation(AsyncNaipyRequest):
   """
-  네이버 검색 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
+  네이버 비동기 번역 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
   #### client_id
   [네이버개발자센터](https://developers.naver.com/main/)에서 발급받은 `Client ID`를 입력합니다.
   #### client_secret
