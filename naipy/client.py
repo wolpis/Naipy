@@ -1,6 +1,7 @@
 from naipy.http import NaipyRequest
 import sys
 from naipy.model import ImageNaipy, BlogNaipy, BookNaipy, EncycNaipy, CafearticleNaipy, KinNaipy, WebkrNaipy, ShopNaipy, DocNaipy, DetectNaipy, N2mtNaipy
+import random
 
 class Search(NaipyRequest):
   """
@@ -29,6 +30,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return ImageNaipy(data = data, **data)
 
   def blog(self, text : str) -> BlogNaipy:
@@ -39,6 +41,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return BlogNaipy(data = data, **data)
 
   def book(self, text : str) -> BookNaipy:
@@ -49,6 +52,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return BookNaipy(data = data, **data)
 
   def encyc(self, text : str) -> EncycNaipy:
@@ -59,6 +63,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return EncycNaipy(data = data, **data)
 
   def cafearticle(self, text : str) -> CafearticleNaipy:
@@ -69,6 +74,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return CafearticleNaipy(data = data, **data)
 
   def kin(self, text : str) -> KinNaipy:
@@ -79,6 +85,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return KinNaipy(data = data, **data)
 
   def webkr(self, text : str) -> WebkrNaipy:
@@ -89,6 +96,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return WebkrNaipy(data = data, **data)
 
   def shop(self, text : str) -> ShopNaipy:
@@ -99,6 +107,7 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return ShopNaipy(data = data, **data)
 
   def doc(self, text : str) -> DocNaipy:
@@ -109,11 +118,12 @@ class Search(NaipyRequest):
     tag = ['search', str(current_func_name)]
     data = self.get_result(tag, text)
     data["type"] = str(current_func_name)
+    data["item"] = random.choice(data['items'])
     return DocNaipy(data = data, **data)
 
 class Translation(NaipyRequest):
   """
-  네이버 검색 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
+  네이버 번역 라이브러리입니다.<br>(Parameters가 빈칸일시 샘플키로 요청합니다.)
   #### client_id
   [네이버개발자센터](https://developers.naver.com/main/)에서 발급받은 `Client ID`를 입력합니다.
   #### client_secret
