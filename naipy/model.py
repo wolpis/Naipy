@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from typing import Dict, Any, Optional, List
-import sys
+import sys 
 
 @dataclass(frozen = True)
 class BaseNaipy:
