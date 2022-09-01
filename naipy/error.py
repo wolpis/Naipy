@@ -1,2 +1,2 @@
-class ConverError(Exception):
+class HTTPException(Exception):
   pass
