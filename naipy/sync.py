@@ -26,7 +26,7 @@ class SyncNaipyRequest:
     method : str,
     endpoint : str,
     params: Dict[str, Union[str, int]]
-  ):
+  ) -> Dict[str, Union[str, int]]:
     headers = {
       "X-Naver-Client-Id" : self.client_id,
       "X-Naver-Client-Secret" : self.client_secret,
