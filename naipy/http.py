@@ -32,7 +32,7 @@ class NaipyRequest:
     }
     url = self.base_url + endpoint
     async with aiohttp.ClientSession(headers = headers) as session:
-      async with session.request(method, url=url, headers=headers, params=params) as response:
+      async with session.request(method, url=url, params=params) as response:
         rescode = response.status
         if(rescode==200):
           return await response.json()
