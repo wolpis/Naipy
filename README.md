@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Naipy(네이피)[Beta]</h1>
+  <h1>Naipy(네이피)</h1>
 </div>
 
 ![image](https://user-images.githubusercontent.com/103942316/184539416-9568fad2-24ed-4832-8f01-e2775a89fafe.png)
