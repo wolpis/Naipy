@@ -13,4 +13,8 @@ setuptools.setup(
     url="https://github.com/VoidAsMad/Naipy",
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
+    install_requires=[
+        "requests",
+        "aiohttp"
+        ]
 )
