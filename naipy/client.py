@@ -142,16 +142,22 @@ class Translation(NaipyRequest):
         data = data["message"]["result"]
         return N2mtNaipy(data, **data)
 
-    async def dual_translation(self, text: str, target: List[str]) -> List[N2mtNaipy]:
+    async def dual_translation(self, text: str, targets: List[str]) -> List[N2mtNaipy]:
         """
         문장또는 단어를 여러 언어로 번역합니다. `target`파라미터는 [언어코드표](https://developers.naver.com/docs/papago/papago-nmt-api-reference.md#%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0)를 참고해주세요!
         """
         source = await self.detect(text)
         source = source.langCode
-        result = []
-        for _target in target:
-            params = {"text": text, "source": source, "target": _target}
-            data = await self.get_translation("n2mt", params=params)
-            data = data["message"]["result"]
-            result.append(N2mtNaipy(data, **data))
-        return result
+        futures = [
+            asyncio.ensure_future(
+                self.get_translation(
+                    "n2mt", params={"text": text, "source": source, "target": target}
+                )
+            )
+            for target in targets
+        ]
+        result = await asyncio.gather(*futures)
+        return [
+            N2mtNaipy(data["message"]["result"], **data["message"]["result"])
+            for data in result
+        ]
