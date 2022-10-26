@@ -1,4 +1,4 @@
-from naipy.client import Translation
+from naipy.sync import Translation
 import pytest
 from typing import List
 
