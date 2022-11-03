@@ -177,7 +177,7 @@ class EncycNaipy(SearchNaipy):
 
     @property
     def link(self) -> str:
-        """검색 결과 사전 정의의 제목"""
+        """검색 결과 사전의 """
         return self.item[f"{sys._getframe().f_code.co_name}"]
 
     @property
