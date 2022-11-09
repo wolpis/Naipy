@@ -23,10 +23,10 @@ $ pip install naipy
 ```py
 from naipy import sync
 
-nipy = sync.Search()
+naipy = sync.Search()
 # 필수 인자(API)가 들어가는 곳입니다. (샘플키지원)
 
-print(nipy.image("너구리").link)
+print(naipy.image("너구리").link)
 # 너구리라는 검색어 데이터의 link를 반환합니다.
 ```
 ### 검색(이미지)[비동기]
