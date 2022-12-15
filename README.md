@@ -10,6 +10,7 @@
 
 [<img src="https://img.shields.io/pypi/v/naipy.svg">](https://pypi.python.org/pypi/naipy)<br>
 누구나 손쉽게 네이버API를 사용할 수 있어요!<br>
+> [2022 공개SW 개발자 대회 이노그리드 대표상 수상 작품](https://www.oss.kr/dev_competition_activities/show/8df8c099-9b18-454f-a3e1-29baa00116ad?page=2)<br>
 > **동기 비동기 모두 지원합니다!**<br>
 > 현재 지원API : 검색API, 번역API, 언어감지API<br>
 > [자세한 사용법은 여기를 참조해주세요!](https://naipy.notion.site/Naipy-3c332c562b5f42059c48b783b5b59528)<br>
