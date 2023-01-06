@@ -1,4 +1,5 @@
 import setuptools
+
 from naipy import __version__
 
 setuptools.setup(

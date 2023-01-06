@@ -1,7 +1,9 @@
 import warnings
 from typing import Dict, Union
-from naipy.error import HTTPException
+
 import aiohttp
+
+from naipy.error import HTTPException
 
 
 class NaipyRequest:

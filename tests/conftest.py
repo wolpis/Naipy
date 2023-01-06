@@ -1,6 +1,6 @@
-from naipy import client
-from naipy import sync
 import pytest
+
+from naipy import client, sync
 
 
 @pytest.fixture

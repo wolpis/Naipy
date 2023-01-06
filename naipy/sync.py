@@ -1,21 +1,23 @@
-from naipy.model import (
-    ImageNaipy,
-    BlogNaipy,
-    BookNaipy,
-    EncycNaipy,
-    CafearticleNaipy,
-    KinNaipy,
-    WebkrNaipy,
-    ShopNaipy,
-    DocNaipy,
-    DetectNaipy,
-    N2mtNaipy,
-)
 import random
 import warnings
 from typing import Dict, Union
+
 import requests
+
 from naipy.error import HTTPException
+from naipy.model import (
+    BlogNaipy,
+    BookNaipy,
+    CafearticleNaipy,
+    DetectNaipy,
+    DocNaipy,
+    EncycNaipy,
+    ImageNaipy,
+    KinNaipy,
+    N2mtNaipy,
+    ShopNaipy,
+    WebkrNaipy,
+)
 
 
 class SyncNaipyRequest:

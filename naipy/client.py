@@ -1,20 +1,21 @@
-from naipy.http import NaipyRequest
-from naipy.model import (
-    ImageNaipy,
-    BlogNaipy,
-    BookNaipy,
-    EncycNaipy,
-    CafearticleNaipy,
-    KinNaipy,
-    WebkrNaipy,
-    ShopNaipy,
-    DocNaipy,
-    DetectNaipy,
-    N2mtNaipy,
-)
+import asyncio
 import random
 from typing import List
-import asyncio
+
+from naipy.http import NaipyRequest
+from naipy.model import (
+    BlogNaipy,
+    BookNaipy,
+    CafearticleNaipy,
+    DetectNaipy,
+    DocNaipy,
+    EncycNaipy,
+    ImageNaipy,
+    KinNaipy,
+    N2mtNaipy,
+    ShopNaipy,
+    WebkrNaipy,
+)
 
 
 class Search(NaipyRequest):

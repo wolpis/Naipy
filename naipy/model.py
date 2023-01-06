@@ -1,6 +1,6 @@
-from dataclasses import dataclass, field
-from typing import Dict, Any, Optional, List
 import sys
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional
 
 
 @dataclass(frozen=True)
@@ -177,7 +177,7 @@ class EncycNaipy(SearchNaipy):
 
     @property
     def link(self) -> str:
-        """검색 결과 사전의 """
+        """검색 결과 사전의"""
         return self.item[f"{sys._getframe().f_code.co_name}"]
 
     @property

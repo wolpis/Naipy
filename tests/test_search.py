@@ -1,5 +1,6 @@
-from naipy.client import Search
 import pytest
+
+from naipy.client import Search
 
 # 검색어
 text = "너구리"

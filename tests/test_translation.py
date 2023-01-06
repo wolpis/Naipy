@@ -1,6 +1,8 @@
-from naipy.client import Translation
-import pytest
 from typing import List
+
+import pytest
+
+from naipy.client import Translation
 
 text = "안녕하세요"
 
